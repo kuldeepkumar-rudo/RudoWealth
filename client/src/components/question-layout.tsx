@@ -76,7 +76,7 @@ export function QuestionLayout({
 
             {children}
 
-            {/* {showContinue && ( */}
+            {showContinue && (
               <div className="pt-2 pb-4">
                 <Button
                   className="w-full h-12 text-base font-semibold"
@@ -87,7 +87,7 @@ export function QuestionLayout({
                   {continueText}
                 </Button>
               </div>
-            {/* )} */}
+            )}
           </div>
         </div>
       </div>
