@@ -150,6 +150,7 @@ export default function Question5() {
       updateResponse("q4_products", products); // still saved, even if empty
       console.log("Knowledge level saved:", knowledge);
       console.log("Products saved:", products);
+      console.log("Knowledge level saved:", knowledge);
       setLocation("/assessment/6");
     }
   };
