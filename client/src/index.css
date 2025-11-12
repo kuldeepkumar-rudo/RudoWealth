@@ -1,0 +1,232 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html {
+  scroll-behavior: smooth;
+}
+
+/* =========================================================
+   LIGHT MODE – combined from both versions
+   ========================================================= */
+:root {
+  --button-outline: rgba(0,0,0, .10);
+  --badge-outline: rgba(0,0,0, .05);
+  --opaque-button-border-intensity: -8;
+
+  --elevate-1: rgba(0,0,0, .03);
+  --elevate-2: rgba(0,0,0, .08);
+
+  --background: 0 0% 98%;
+  --foreground: 222 15% 12%;
+  --border: 220 4% 88%;
+  --card: 0 0% 100%;
+  --card-foreground: 222 15% 12%;
+  --card-border: 220 4% 92%;
+  --sidebar: 220 4% 96%;
+  --sidebar-foreground: 222 15% 12%;
+  --sidebar-border: 220 4% 90%;
+  --sidebar-primary: 217 91% 48%;
+  --sidebar-primary-foreground: 0 0% 98%;
+  --sidebar-accent: 220 6% 92%;
+  --sidebar-accent-foreground: 222 15% 12%;
+  --sidebar-ring: 217 91% 48%;
+  --popover: 0 0% 95%;
+  --popover-foreground: 222 15% 12%;
+  --popover-border: 220 4% 87%;
+  --primary: 195 63% 29%;
+  --primary-foreground: 0 0% 98%;
+  --secondary: 220 6% 90%;
+  --secondary-foreground: 222 15% 12%;
+  --muted: 220 8% 94%;
+  --muted-foreground: 222 12% 42%;
+  --accent: 24 49% 52%;
+  --accent-foreground: 0 0% 98%;
+  --success: 160 100% 41%;
+  --success-foreground: 0 0% 98%;
+  --warning: 43 100% 50%;
+  --warning-foreground: 0 0% 9%;
+  --info: 211 100% 50%;
+  --info-foreground: 0 0% 98%;
+  --destructive: 0 84% 42%;
+  --destructive-foreground: 0 0% 98%;
+
+  --input: 220 8% 72%;
+  --ring: 195 63% 29%;
+
+  --chart-1: 217 91% 48%;
+  --chart-2: 142 76% 36%;
+  --chart-3: 262 83% 58%;
+  --chart-4: 31 97% 54%;
+  --chart-5: 199 89% 48%;
+
+  --font-sans: Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  --font-serif: Georgia, serif;
+  --font-mono: "SF Mono", Menlo, Monaco, "Courier New", monospace;
+
+  --radius: .5rem;
+  --shadow-2xs: 0px 1px 2px 0px hsl(220 8% 15% / 0.05);
+  --shadow-xs: 0px 1px 3px 0px hsl(220 8% 15% / 0.08);
+  --shadow-sm: 0px 2px 4px 0px hsl(220 8% 15% / 0.06), 0px 1px 2px -1px hsl(220 8% 15% / 0.04);
+  --shadow: 0px 4px 6px -1px hsl(220 8% 15% / 0.08), 0px 2px 4px -2px hsl(220 8% 15% / 0.04);
+  --shadow-md: 0px 6px 12px -2px hsl(220 8% 15% / 0.10), 0px 3px 6px -3px hsl(220 8% 15% / 0.05);
+  --shadow-lg: 0px 10px 20px -3px hsl(220 8% 15% / 0.12), 0px 4px 8px -4px hsl(220 8% 15% / 0.05);
+  --shadow-xl: 0px 20px 25px -5px hsl(220 8% 15% / 0.14), 0px 8px 10px -6px hsl(220 8% 15% / 0.06);
+  --shadow-2xl: 0px 25px 50px -12px hsl(220 8% 15% / 0.18);
+
+  --tracking-normal: -0.01em;
+  --spacing: 0.25rem;
+
+  /* Auto-computed border colors (fallbacks for older browsers) */
+  --sidebar-primary-border: hsl(var(--sidebar-primary));
+  --sidebar-accent-border: hsl(var(--sidebar-accent));
+  --primary-border: hsl(var(--primary));
+  --secondary-border: hsl(var(--secondary));
+  --muted-border: hsl(var(--muted));
+  --accent-border: hsl(var(--accent));
+  --destructive-border: hsl(var(--destructive));
+  --success-border: hsl(var(--success));
+  --warning-border: hsl(var(--warning));
+  --info-border: hsl(var(--info));
+}
+
+/* =========================================================
+   DARK MODE – premium theme (File 2) with fallbacks (File 1)
+   ========================================================= */
+.dark {
+  --button-outline: rgba(255,255,255, .10);
+  --badge-outline: rgba(255,255,255, .05);
+  --opaque-button-border-intensity: 9;
+
+  --elevate-1: rgba(255,255,255, .04);
+  --elevate-2: rgba(255,255,255, .09);
+
+  --background: 0 0% 0%;
+  --foreground: 0 0% 100%;
+  --border: 0 0% 15%;
+  --card: 0 0% 10%;
+  --card-foreground: 0 0% 100%;
+  --card-border: 0 0% 12%;
+  --sidebar: 222 36% 13%;
+  --sidebar-foreground: 210 20% 98%;
+  --sidebar-border: 215 16% 18%;
+  --sidebar-primary: 195 63% 29%;
+  --sidebar-primary-foreground: 210 20% 98%;
+  --sidebar-accent: 222 37% 19%;
+  --sidebar-accent-foreground: 210 20% 98%;
+  --sidebar-ring: 195 63% 29%;
+  --popover: 222 36% 13%;
+  --popover-foreground: 210 20% 98%;
+  --popover-border: 215 16% 20%;
+  --primary: 174 72% 56%;
+  --primary-foreground: 0 0% 0%;
+  --secondary: 0 0% 15%;
+  --secondary-foreground: 0 0% 100%;
+  --muted: 0 0% 15%;
+  --muted-foreground: 0 0% 60%;
+  --accent: 39 44% 62%;
+  --accent-foreground: 222 40% 6%;
+  --success: 160 100% 41%;
+  --success-foreground: 0 0% 9%;
+  --warning: 43 100% 50%;
+  --warning-foreground: 0 0% 9%;
+  --info: 211 100% 50%;
+  --info-foreground: 0 0% 98%;
+  --destructive: 0 84% 48%;
+  --destructive-foreground: 210 20% 98%;
+
+  --input: 215 16% 25%;
+  --ring: 195 63% 29%;
+
+  --chart-1: 195 63% 45%;
+  --chart-2: 39 44% 62%;
+  --chart-3: 262 83% 68%;
+  --chart-4: 31 97% 62%;
+  --chart-5: 199 89% 58%;
+
+  --shadow-2xs: 0px 1px 2px 0px hsl(0 0% 0% / 0.30);
+  --shadow-xs: 0px 1px 3px 0px hsl(0 0% 0% / 0.35);
+  --shadow-sm: 0px 2px 4px 0px hsl(0 0% 0% / 0.28), 0px 1px 2px -1px hsl(0 0% 0% / 0.20);
+  --shadow: 0px 4px 6px -1px hsl(0 0% 0% / 0.32), 0px 2px 4px -2px hsl(0 0% 0% / 0.20);
+  --shadow-md: 0px 6px 12px -2px hsl(0 0% 0% / 0.40), 0px 3px 6px -3px hsl(0 0% 0% / 0.22);
+  --shadow-lg: 0px 10px 20px -3px hsl(0 0% 0% / 0.48), 0px 4px 8px -4px hsl(0 0% 0% / 0.22);
+  --shadow-xl: 0px 20px 25px -5px hsl(0 0% 0% / 0.55), 0px 8px 10px -6px hsl(0 0% 0% / 0.26);
+  --shadow-2xl: 0px 25px 50px -12px hsl(0 0% 0% / 0.65);
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply font-sans antialiased bg-background text-foreground;
+  }
+}
+
+@layer utilities {
+  input[type="search"]::-webkit-search-cancel-button {
+    @apply hidden;
+  }
+
+  [contenteditable][data-placeholder]:empty::before {
+    content: attr(data-placeholder);
+    color: hsl(var(--muted-foreground));
+    pointer-events: none;
+  }
+
+  .toggle-elevate::before,
+  .toggle-elevate-2::before {
+    content: "";
+    pointer-events: none;
+    position: absolute;
+    inset: 0px;
+    border-radius: inherit;
+    z-index: -1;
+  }
+
+  .toggle-elevate.toggle-elevated::before {
+    background-color: var(--elevate-2);
+  }
+
+  .border.toggle-elevate::before {
+    inset: -1px;
+  }
+
+  .hover-elevate,
+  .active-elevate,
+  .hover-elevate-2,
+  .active-elevate-2 {
+    position: relative;
+    z-index: 0;
+  }
+
+  .hover-elevate::after,
+  .active-elevate::after,
+  .hover-elevate-2::after,
+  .active-elevate-2::after {
+    content: "";
+    pointer-events: none;
+    position: absolute;
+    inset: 0px;
+    border-radius: inherit;
+    z-index: 999;
+  }
+
+  .hover-elevate:hover::after,
+  .active-elevate:active::after {
+    background-color: var(--elevate-1);
+  }
+
+  .hover-elevate-2:hover::after,
+  .active-elevate-2:active::after {
+    background-color: var(--elevate-2);
+  }
+
+  .border.hover-elevate::after,
+  .border.active-elevate::after,
+  .border.hover-elevate-2::after,
+  .border.active-elevate-2::after {
+    inset: -1px;
+  }
+}
