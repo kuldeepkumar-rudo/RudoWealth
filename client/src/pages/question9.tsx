@@ -42,7 +42,7 @@ export default function Question9() {
       title="Your Risk Comfort Level"
       subtitle="How do you feel about market ups and downs?"
       onContinue={handleContinue}
-      canContinue={!!comfort}
+      canContinue={true}
     >
       <div className="space-y-3">
         {comfortOptions.map((option) => (

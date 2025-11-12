@@ -42,8 +42,8 @@ export default function Question6() {
       title="Your Investment Experience"
       subtitle="Which investments are you familiar with?"
       onContinue={handleContinue}
-      canContinue={products.length > 0}
-      showContinue={products.length > 0}
+      canContinue={true}
+      showContinue={true}
     >
       <div className="space-y-3">
         <p className="text-sm font-medium text-muted-foreground -mt-1">

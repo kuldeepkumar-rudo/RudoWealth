@@ -31,7 +31,7 @@ export default function Question12() {
       title="Financial Responsibilities"
       subtitle="Almost done! Just a few more details"
       onContinue={handleContinue}
-      canContinue={!!dependents}
+      canContinue={true}
     >
       <div className="space-y-3">
         <p className="text-sm font-medium text-foreground">

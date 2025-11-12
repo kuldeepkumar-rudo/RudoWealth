@@ -51,8 +51,8 @@ export default function Question5() {
       title="Your Investment Experience"
       subtitle="This helps us recommend appropriate investment strategies"
       onContinue={handleContinue}
-      canContinue={!!(knowledge && products.length > 0)}
-      showContinue={!!(knowledge && products.length > 0)}
+      canContinue={!!knowledge}
+      showContinue={true}
     >
       <div className="space-y-6">
         <div className="space-y-3">

@@ -31,7 +31,7 @@ export default function Question7() {
       title="Your Investment Timeline"
       subtitle="When do you expect to need a significant portion of this money?"
       onContinue={handleContinue}
-      canContinue={!!horizon}
+      canContinue={true}
     >
       <div className="space-y-3">
         {horizonOptions.map((option) => (

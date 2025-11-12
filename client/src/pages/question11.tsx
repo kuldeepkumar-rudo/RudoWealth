@@ -32,7 +32,7 @@ export default function Question11() {
       title="Decision-Making Style"
       subtitle="One more scenario to understand you better"
       onContinue={handleContinue}
-      canContinue={!!fomo}
+      canContinue={true}
     >
       <div className="space-y-6">
         <Card className="p-4 bg-muted/30 border-muted">
