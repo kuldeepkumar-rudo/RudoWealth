@@ -26,6 +26,7 @@ export default function Question14() {
 
   const handleContinue = () => {
     if (liquidity) {
+      console.log("Liquidity level saved:", liquidity);
       updateResponse("q12_liquidity", liquidity);
       setLocation("/processing");
     }
@@ -38,7 +39,7 @@ export default function Question14() {
       title="Upcoming Financial Needs"
       subtitle="Last question!"
       onContinue={handleContinue}
-      canContinue={!!liquidity}
+      canContinue={true}
       continueText="Discover My Investment Profile"
     >
       <div className="space-y-3">

@@ -32,7 +32,7 @@ export default function Question8() {
       title="Your Investment Goals"
       subtitle="What's most important to you with this investment?"
       onContinue={handleContinue}
-      canContinue={!!goal}
+      canContinue={true}
     >
       <div className="space-y-3">
         {goalOptions.map((option) => (

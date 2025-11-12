@@ -32,7 +32,7 @@ export default function Question10() {
       title="Reality Check"
       subtitle="Let's test this with a real scenario"
       onContinue={handleContinue}
-      canContinue={!!reaction}
+      canContinue={true}
     >
       <div className="space-y-6">
         <Card className="p-4 bg-muted/30 border-muted">

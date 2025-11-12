@@ -41,8 +41,8 @@ export default function Question4() {
       title="Source of Investment Funds"
       subtitle="Where does your investment money come from?"
       onContinue={handleContinue}
-      canContinue={sources.length > 0}
-      showContinue={sources.length > 0}
+      canContinue={true}
+      showContinue={true}
     >
       <div className="space-y-3">
         <p className="text-sm font-medium text-muted-foreground">

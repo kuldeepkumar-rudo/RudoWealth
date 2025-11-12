@@ -45,8 +45,8 @@ export default function Question1() {
       title="Your Work & Income"
       subtitle="This helps us understand your financial capacity"
       onContinue={handleContinue}
-      canContinue={!!employment}
-      showContinue={!!employment}
+      canContinue={true}
+      showContinue={true}
     >
       <div className="space-y-6">
         <div className="space-y-3">

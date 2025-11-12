@@ -34,7 +34,7 @@ export default function Question3() {
       title="Your Financial Safety Net"
       subtitle="This helps us assess your investment capacity"
       onContinue={handleContinue}
-      canContinue={!!networth}
+      canContinue={true}
     >
       <div className="space-y-3">
         <p className="text-sm font-medium text-foreground">

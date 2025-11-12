@@ -57,7 +57,7 @@ export default function Question13() {
       title="Emergency Preparedness"
       subtitle="Your financial safety buffer"
       onContinue={handleContinue}
-      canContinue={!!emergency}
+      canContinue={true}
     >
       <div className="space-y-3">
         <p className="text-sm font-medium text-foreground">
