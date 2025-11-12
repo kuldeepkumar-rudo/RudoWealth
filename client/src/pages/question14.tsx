@@ -26,6 +26,7 @@ export default function Question14() {
 
   const handleContinue = () => {
     if (liquidity) {
+      console.log("Liquidity level saved:", liquidity);
       updateResponse("q12_liquidity", liquidity);
       setLocation("/processing");
     }
