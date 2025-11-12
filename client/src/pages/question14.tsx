@@ -25,11 +25,12 @@ export default function Question14() {
   ];
 
   const handleContinue = () => {
-    if (liquidity) {
+    // if (liquidity) {
       console.log("Liquidity level saved:", liquidity);
       updateResponse("q12_liquidity", liquidity);
+      console.log("Calling setLocation");
       setLocation("/processing");
-    }
+    // }
   };
 
   return (
