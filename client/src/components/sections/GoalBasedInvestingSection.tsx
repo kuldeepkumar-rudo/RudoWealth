@@ -23,7 +23,7 @@ export default function GoalBasedInvestingSection() {
             </h2>
             
             <p className="text-lg text-muted-foreground leading-relaxed mb-8">
-              Most platforms adjust risk by age. We adjust by goal proximity—protecting near-term goals while maximizing long-term growth.
+              Most platforms adjust risk by age. We adjust by goal proximity protecting near-term goals while maximizing long-term growth.
             </p>
 
             {/* Key features */}

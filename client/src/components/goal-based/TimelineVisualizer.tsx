@@ -1,5 +1,6 @@
 import { useEffect, useRef, useState } from "react";
 import { Home, GraduationCap, Plane, Heart } from "lucide-react";
+import { cn } from "@/lib/utils";
 
 interface Milestone {
   icon: React.ElementType;
@@ -37,7 +38,7 @@ export default function TimelineVisualizer() {
   }, []);
 
   return (
-    <div ref={ref} className="relative w-full aspect-[16/10] rounded-2xl overflow-hidden bg-gradient-to-br from-card via-card to-muted/20 border border-border/50 backdrop-blur-xl p-8">
+    <div ref={ref} className="relative w-full aspect-[16/10] rounded-2xl overflow-hidden bg-gradient-to-br from-card via-card to-muted/20 border border-border/50 backdrop-blur-xl p-4 sm:p-6 md:p-8">
       {/* Ambient glow */}
       <div className="absolute inset-0 bg-gradient-to-tr from-primary/5 via-transparent to-primary/10 pointer-events-none" />
       
@@ -90,7 +91,48 @@ export default function TimelineVisualizer() {
 
         {/* Milestones */}
         {milestones.map((milestone, index) => {
-          const x = 50 + (700 * milestone.position / 100);
+          // Calculate base position based on percentage
+          const baseX = 50 + (700 * milestone.position / 100);
+          
+          // Type for adjustments
+          type Adjustment = {
+            index: number;
+            sm: number;
+            md: number;
+            lg: number;
+          };
+          
+          // Calculate responsive adjustments
+          const getXAdjustment = () => {
+            const adjustments: Adjustment[] = [
+              { index: 0, sm: -30, md: -40, lg: -50 },  // First dot (2028)
+              { index: 1, sm: -15, md: -20, lg: -20 },   // Second dot (2030)
+              { index: 2, sm: 10, md: 15, lg: 20 },      // Third dot (2035)
+              { index: 3, sm: 30, md: 40, lg: 50 }       // Fourth dot (2050)
+            ];
+            
+            const adjust = adjustments.find(a => a.index === index) || { sm: 0, md: 0, lg: 0 };
+            
+            // Default to the smallest screen size
+            let adjustment = adjust.sm || 0;
+            
+            // Check window width and adjust accordingly
+            if (typeof window !== 'undefined') {
+              if (window.innerWidth >= 1280) { // xl
+                adjustment = adjust.lg || 0;
+              } else if (window.innerWidth >= 1024) { // lg
+                adjustment = adjust.lg || 0;
+              } else if (window.innerWidth >= 768) { // md
+                adjustment = adjust.md || 0;
+              } else if (window.innerWidth >= 640) { // sm
+                adjustment = adjust.sm || 0;
+              }
+            }
+            
+            return adjustment;
+          };
+          
+          const x = baseX + getXAdjustment();
           const y = 380;
           
           return (
@@ -133,7 +175,7 @@ export default function TimelineVisualizer() {
       </svg>
 
       {/* Milestone labels (outside SVG for better text rendering) */}
-      <div className="absolute inset-0 pointer-events-none px-8">
+      <div className="absolute inset-0 pointer-events-none px-4 sm:px-6 md:px-8">
         {milestones.map((milestone, index) => {
           const x = 50 + (700 * milestone.position / 100);
           // Clamp position to prevent overflow
@@ -151,14 +193,14 @@ export default function TimelineVisualizer() {
                 transitionDelay: `${700 + index * 150}ms`
               }}
             >
-              <div className="flex flex-col items-center gap-1">
-                <div className="w-12 h-12 rounded-full bg-primary/20 border-2 border-primary flex items-center justify-center">
-                  <Icon className="w-5 h-5 text-primary" />
+              <div className="flex flex-col items-center gap-0.5 sm:gap-1">
+                <div className="w-8 h-8 sm:w-10 sm:h-10 md:w-12 md:h-12 rounded-full bg-primary/20 border-2 border-primary flex items-center justify-center">
+                  <Icon className="w-3.5 h-3.5 sm:w-4 sm:h-4 md:w-5 md:h-5 text-primary" />
                 </div>
-                <div className="text-xs font-semibold text-foreground whitespace-nowrap mt-1">
+                <div className="text-[10px] sm:text-xs font-semibold text-foreground whitespace-nowrap mt-0.5 sm:mt-1">
                   {milestone.label}
                 </div>
-                <div className="text-xs text-muted-foreground">
+                <div className="text-[10px] sm:text-xs text-muted-foreground">
                   {milestone.year}
                 </div>
               </div>

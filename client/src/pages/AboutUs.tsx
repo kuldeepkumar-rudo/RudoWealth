@@ -8,7 +8,7 @@ import { Button } from "@/components/ui/button";
 // import advisorImage from "@assets/generated_images/Senior_advisor_headshot_portrait_7ceb3581.png";
 import alokImage from "../../../attached_assets/generated_images/Alok Kumar.png"
 import masoomaImage from "../../../attached_assets/generated_images/Masooma Elahi.png"
-// import manojImage from "../../../attached_assets/generated_images/Manoj Kaushik.png"
+import manojImage from "../../../attached_assets/generated_images/Manoj.png"
 import cyrillImage from "../../../attached_assets/generated_images/Cyril Samson.png"
 import bhaskarImage from "../../../attached_assets/generated_images/Bhaskar Dasgupta.jpg"
 import swapnilImage from "../../../attached_assets/generated_images/Swapnil Pawar.jpg"
@@ -28,12 +28,12 @@ export default function AboutUs() {
       bio: "8+ years in HR and client engagement. Leads people and experience at RuDo, making wealth management more human.",
       imageSrc: masoomaImage
     },
-    {
-      name: "Manoj Kaushik",
-      role: "Head of Engineering",
-      bio: "15+ years building fintech platforms. Leading cross-border wealth management technology for seamless client experience.",
-      // imageSrc: manojImage
-    },
+    // {
+    //   name: "Manoj Kaushik",
+    //   role: "Head of Engineering",
+    //   bio: "15+ years building fintech platforms. Leading cross-border wealth management technology for seamless client experience.",
+    //   imageSrc: manojImage
+    // },
     {
       name: "Cyrill Samson",
       role: "Compliance Manager",
@@ -129,7 +129,7 @@ export default function AboutUs() {
               </p>
             </div>
 
-            <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6 mb-20">
+            <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 mb-20">
               {teamMembers.map((member, index) => (
                 <TeamCard
                   key={index}

@@ -290,7 +290,7 @@
 //          {/* Enhanced Recommended Portfolio Section */}
 //         <View style={{ marginTop: 20 }}>
 //           <Text style={styles.portfolioHeader}>Recommended Portfolio</Text>
-          
+
 //           {/* Portfolio Allocation */}
 //           <View style={styles.chartContainer}>
 //             <View style={{ 
@@ -318,7 +318,7 @@
 //                 </Text>
 //                 <Text style={{ fontSize: 10, color: '#64748B' }}>Equity</Text>
 //               </View>
-              
+
 //               {/* These would be segments in a real chart */}
 //               <View style={{ 
 //                 position: 'absolute',
@@ -428,10 +428,12 @@ import {
   PDFDownloadLink,
   Svg,
   Path,
+  Image,
 } from '@react-pdf/renderer';
 import { Button } from '@/components/ui/button';
 import { Download } from 'lucide-react';
 import type { ProfileResult } from '@shared/schema';
+import logoImage from "../../../attached_assets/generated_images/rudo_logo.png"
 
 const styles = StyleSheet.create({
   page: {
@@ -444,18 +446,27 @@ const styles = StyleSheet.create({
     borderBottom: '2 solid #1A5F7A',
     paddingBottom: 15,
   },
+
+  headerTopRow: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    justifyContent: "flex-start", // logo left, text right
+    marginBottom: 10,
+  },
+
   companyName: {
-    fontSize: 24,
+    fontSize: 25,
     fontWeight: 'bold',
-    color: '#1A5F7A',
-    marginBottom: 5,
+    color: '#0A0E1A',
+    marginLeft: 10,
+    // marginBottom: 5,
   },
   reportTitle: {
     fontSize: 14,
     color: '#666666',
   },
   profileSection: {
-    marginTop: 25,
+    marginTop: 15,
     marginBottom: 25,
   },
   profileTitle: {
@@ -472,7 +483,7 @@ const styles = StyleSheet.create({
   sectionTitle: {
     fontSize: 14,
     fontWeight: 'bold',
-    color: '#1A5F7A',
+    color: '#0A0E1A',
     marginTop: 20,
     marginBottom: 10,
     textTransform: 'uppercase',
@@ -497,7 +508,7 @@ const styles = StyleSheet.create({
   scoreValue: {
     fontSize: 11,
     fontWeight: 'bold',
-    color: '#1A5F7A',
+    color: '#0A0E1A',
   },
   bulletPoint: {
     fontSize: 11,
@@ -643,7 +654,19 @@ function InvestmentReportDocument({ profileResult, scores, userName }: PDFReport
       <Page size="A4" style={styles.page}>
         {/* === HEADER === */}
         <View style={styles.header}>
-          <Text style={styles.companyName}>RuDo Wealth</Text>
+          {/* <Text style={styles.companyName}>RuDo Wealth</Text> */}
+          {/* <Image
+            src={logoImage}
+            style={{ width: 40, height: 40, marginBottom: 5 }} // ✅ Adjust size as needed
+          /> */}
+
+          <View style={styles.headerTopRow}>
+            <Image
+              src={logoImage}
+              style={{ width: 40, height: 30 }}
+            />
+            <Text style={styles.companyName}>RuDo Wealth</Text>
+          </View>
           <Text style={styles.reportTitle}>Investment Risk Profile Assessment Report</Text>
           <Text style={[styles.reportTitle, { marginTop: 5 }]}>Generated on {date}</Text>
           {userName && <Text style={[styles.reportTitle, { marginTop: 3 }]}>Prepared for: {userName}</Text>}
@@ -656,62 +679,6 @@ function InvestmentReportDocument({ profileResult, scores, userName }: PDFReport
           <Text style={styles.text}>{profileResult.description}</Text>
         </View>
 
-        {/* === RECOMMENDED PORTFOLIO (DONUT) === */}
-        <View style={{ marginTop: 25 }}>
-          <Text style={styles.portfolioHeader}>Recommended Portfolio</Text>
-
-          <View style={styles.chartContainer}>
-            <DonutChart equity={equity} debt={debt} alternatives={alternatives} />
-
-            {/* Center Text */}
-            <View
-              style={{
-                position: 'absolute',
-                top: 70,
-                left: 70,
-                width: 80,
-                height: 80,
-                justifyContent: 'center',
-                alignItems: 'center',
-              }}
-            >
-              <Text style={{ fontSize: 16, fontWeight: 'bold', color: '#0F172A' }}>100%</Text>
-              <Text style={{ fontSize: 9, color: '#64748B' }}>Portfolio</Text>
-            </View>
-
-            {/* Legend */}
-            <View style={{ flexDirection: 'row', justifyContent: 'center', marginTop: 12 }}>
-              <View style={{ flexDirection: 'row', alignItems: 'center', marginRight: 10 }}>
-                <View style={{ width: 12, height: 12, backgroundColor: '#4CD9B0', marginRight: 5 }} />
-                <Text style={{ fontSize: 10 }}>Equity: {equity}%</Text>
-              </View>
-              <View style={{ flexDirection: 'row', alignItems: 'center', marginRight: 10 }}>
-                <View style={{ width: 12, height: 12, backgroundColor: '#FFC857', marginRight: 5 }} />
-                <Text style={{ fontSize: 10 }}>Debt: {debt}%</Text>
-              </View>
-              <View style={{ flexDirection: 'row', alignItems: 'center' }}>
-                <View style={{ width: 12, height: 12, backgroundColor: '#A78BFA', marginRight: 5 }} />
-                <Text style={{ fontSize: 10 }}>Alternatives: {alternatives}%</Text>
-              </View>
-            </View>
-          </View>
-
-          {/* Portfolio Metrics */}
-          <View style={styles.metricsContainer}>
-            <View style={styles.metricRow}>
-              <Text style={styles.metricLabel}>Expected Annual Return</Text>
-              <Text style={[styles.metricValue, { color: '#10B981' }]}>{profileResult.expectedReturn}</Text>
-            </View>
-            <View style={styles.metricRow}>
-              <Text style={styles.metricLabel}>Risk Level</Text>
-              <Text style={styles.metricValue}>{profileResult.riskLevel}</Text>
-            </View>
-            <View style={[styles.metricRow, { marginBottom: 0 }]}>
-              <Text style={styles.metricLabel}>Volatility</Text>
-              <Text style={styles.metricValue}>{profileResult.volatility}</Text>
-            </View>
-          </View>
-        </View>
 
         {/* === KEY METRICS === */}
         <View>
@@ -791,10 +758,66 @@ function InvestmentReportDocument({ profileResult, scores, userName }: PDFReport
         <View>
           <Text style={styles.sectionTitle}>Recommended Next Steps</Text>
           <Text style={styles.text}>{profileResult.nextSteps}</Text>
+          <Text style={[styles.text, { marginTop: 170 }]}></Text>
         </View>
 
-        
 
+        {/* === RECOMMENDED PORTFOLIO (DONUT) === */}
+        <View style={{ marginTop: 10 }}>
+          <Text style={styles.portfolioHeader}>Recommended Portfolio</Text>
+
+          <View style={styles.chartContainer}>
+            <DonutChart equity={equity} debt={debt} alternatives={alternatives} />
+
+            {/* Center Text */}
+            <View
+              style={{
+                position: 'absolute',
+                top: 70,
+                left: 70,
+                width: 80,
+                height: 80,
+                justifyContent: 'center',
+                alignItems: 'center',
+              }}
+            >
+              <Text style={{ fontSize: 16, fontWeight: 'bold', color: '#0F172A' }}>100%</Text>
+              <Text style={{ fontSize: 9, color: '#64748B' }}>Portfolio</Text>
+            </View>
+
+            {/* Legend */}
+            <View style={{ flexDirection: 'row', justifyContent: 'center', marginTop: 12 }}>
+              <View style={{ flexDirection: 'row', alignItems: 'center', marginRight: 10 }}>
+                <View style={{ width: 12, height: 12, backgroundColor: '#4CD9B0', marginRight: 5 }} />
+                <Text style={{ fontSize: 10 }}>Equity: {equity}%</Text>
+              </View>
+              <View style={{ flexDirection: 'row', alignItems: 'center', marginRight: 10 }}>
+                <View style={{ width: 12, height: 12, backgroundColor: '#FFC857', marginRight: 5 }} />
+                <Text style={{ fontSize: 10 }}>Debt: {debt}%</Text>
+              </View>
+              <View style={{ flexDirection: 'row', alignItems: 'center' }}>
+                <View style={{ width: 12, height: 12, backgroundColor: '#A78BFA', marginRight: 5 }} />
+                <Text style={{ fontSize: 10 }}>Alternatives: {alternatives}%</Text>
+              </View>
+            </View>
+          </View>
+
+          {/* Portfolio Metrics */}
+          <View style={styles.metricsContainer}>
+            <View style={styles.metricRow}>
+              <Text style={styles.metricLabel}>Expected Annual Return</Text>
+              <Text style={[styles.metricValue, { color: '#10B981' }]}>{profileResult.expectedReturn}</Text>
+            </View>
+            <View style={styles.metricRow}>
+              <Text style={styles.metricLabel}>Risk Level</Text>
+              <Text style={styles.metricValue}>{profileResult.riskLevel}</Text>
+            </View>
+            <View style={[styles.metricRow, { marginBottom: 0 }]}>
+              <Text style={styles.metricLabel}>Volatility</Text>
+              <Text style={styles.metricValue}>{profileResult.volatility}</Text>
+            </View>
+          </View>
+        </View>
 
 
 

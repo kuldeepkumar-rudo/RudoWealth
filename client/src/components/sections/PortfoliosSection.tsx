@@ -1,5 +1,6 @@
 import PortfolioCard from "../PortfolioCard";
 import { Button } from "@/components/ui/button";
+import { useLocation } from "wouter";
 
 export default function PortfoliosSection() {
   const portfolios = [
@@ -50,6 +51,8 @@ export default function PortfoliosSection() {
     }
   ];
 
+  const [location, setLocation] = useLocation();
+
   return (
     <section className="py-20 lg:py-32 bg-background">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
@@ -76,7 +79,7 @@ export default function PortfoliosSection() {
           <p className="text-sm text-muted-foreground mb-6">
             *Based on historical market data. Past performance doesn't guarantee future results.
           </p>
-          <Button size="lg" data-testid="button-find-portfolio">
+          <Button size="lg" onClick={()=>setLocation("/quiz")} data-testid="button-find-portfolio">
             Find Your Portfolio →
           </Button>
         </div>

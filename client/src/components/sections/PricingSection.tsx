@@ -43,11 +43,11 @@ export default function PricingSection() {
               ))}
             </div>
 
-            <div className="text-center">
+            {/* <div className="text-center">
               <Button size="lg" className="w-full sm:w-auto px-12" data-testid="button-pricing-start">
                 Start Your Plan →
               </Button>
-            </div>
+            </div> */}
           </Card>
 
           <div className="bg-muted/50 rounded-lg p-6 border border-border">

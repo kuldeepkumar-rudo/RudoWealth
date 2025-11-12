@@ -40,14 +40,14 @@ export default function HowItWorksSection() {
             ))}
           </div>
 
-          <div className="text-center">
+          {/* <div className="text-center">
             <p className="text-sm text-muted-foreground mb-6">
               Switch or withdraw anytime. No penalties.
             </p>
             <Button size="lg" data-testid="button-start-plan-how">
               Start Your Plan →
             </Button>
-          </div>
+          </div> */}
         </div>
       </div>
     </section>

@@ -3,11 +3,13 @@ import { Button } from "@/components/ui/button";
 import { Menu, X, Moon, Sun } from "lucide-react";
 import { useState } from "react";
 import { useTheme } from "./ThemeProvider";
+import logoImage from "../../../attached_assets/generated_images/logo.00c1d42c.svg"
 
 export default function Header() {
   const [location] = useLocation();
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const { theme, toggleTheme } = useTheme();
+  const [, setLocation] = useLocation();
 
   const navLinks = [
     { href: "/", label: "Digital Advisory" },
@@ -24,7 +26,7 @@ export default function Header() {
           <Link href="/" data-testid="link-home">
             <div className="flex items-center gap-2 cursor-pointer">
               <div className="text-2xl font-bold bg-gradient-to-r from-primary to-chart-2 bg-clip-text text-transparent">
-                RuDo
+                <img src={logoImage} alt="RuDo Logo" className="h-8 w-auto" />
               </div>
             </div>
           </Link>
@@ -57,6 +59,7 @@ export default function Header() {
             <Button
               size="sm"
               className="hidden md:flex"
+              onClick={()=>setLocation("/quiz")}
               data-testid="button-start-plan"
             >
               Build Your Wealth Plan →
@@ -90,7 +93,7 @@ export default function Header() {
                 </Button>
               </Link>
             ))}
-            <Button className="w-full mt-2" data-testid="button-mobile-start-plan">
+            <Button className="w-full mt-2" onClick={()=>setLocation("/quiz")} data-testid="button-mobile-start-plan">
               Build Your Wealth Plan →
             </Button>
           </nav>

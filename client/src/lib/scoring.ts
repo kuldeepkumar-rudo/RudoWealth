@@ -181,7 +181,8 @@ export function getProfileResult(
   const profiles: Record<ProfileType, Omit<ProfileResult, "score" | "allocation">> = {
     conservative_guardian: {
       type: "conservative_guardian",
-      title: "Conservative Guardian",
+      // title: "Conservative Guardian",
+      title: "CONSERVATIVE GUARDIAN",
       tagline: "Safety-focused, capital preservation",
       color: "hsl(210, 20%, 55%)",
       icon: "shield",
@@ -223,7 +224,7 @@ export function getProfileResult(
     },
     steady_builder: {
       type: "steady_builder",
-      title: "Steady Builder",
+      title: "STEADY BUILDER",
       tagline: "Consistent progress, patient approach",
       color: "hsl(150, 28%, 50%)",
       icon: "layers",
@@ -263,7 +264,7 @@ export function getProfileResult(
     },
     balanced_grower: {
       type: "balanced_grower",
-      title: "Balanced Grower",
+      title: "BALANCED GROWER",
       tagline: "Strategic growth with guardrails",
       color: "hsl(186, 51%, 38%)",
       icon: "scale",
@@ -304,7 +305,7 @@ export function getProfileResult(
     },
     growth_seeker: {
       type: "growth_seeker",
-      title: "Growth Seeker",
+      title: "GROWTH SEEKER",
       tagline: "Calculated risks for meaningful returns",
       color: "hsl(210, 40%, 48%)",
       icon: "target",
@@ -346,7 +347,7 @@ export function getProfileResult(
     },
     bold_explorer: {
       type: "bold_explorer",
-      title: "The Bold Explorer",
+      title: " BOLD EXPLORER",
       tagline: "Maximum growth, full commitment",
       color: "hsl(270, 35%, 55%)",
       icon: "rocket",
