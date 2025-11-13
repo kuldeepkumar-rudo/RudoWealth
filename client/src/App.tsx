@@ -41,6 +41,7 @@ import Results from "./pages/results";
 import { AssessmentProvider } from "@/lib/assessment-store";
 import TransitionAB from "./pages/transition-ab";
 import TransitionBC from "./pages/transition-bc";
+import Disclaimer from "./pages/Disclaimer";
 
 function Router() {
   return (
@@ -57,6 +58,7 @@ function Router() {
       <Route path="/calculators/ppf" component={PPFCalculator} />
       <Route path="/calculators/currency-impact" component={CurrencyImpactCalculator} />
       <Route path="/private-wealth" component={PrivateWealth} />
+      <Route path="/disclaimer" component={Disclaimer} />
       <Route path="/quiz" component={Landing} />
       <Route path="/assessment/1" component={Question1} />
       <Route path="/assessment/2" component={Question2} />

@@ -10,7 +10,7 @@ import alokImage from "../../../attached_assets/generated_images/Alok Kumar.png"
 import masoomaImage from "../../../attached_assets/generated_images/Masooma Elahi.png"
 import manojImage from "../../../attached_assets/generated_images/Manoj.png"
 import cyrillImage from "../../../attached_assets/generated_images/Cyril Samson.png"
-import bhaskarImage from "../../../attached_assets/generated_images/Bhaskar Dasgupta.jpg"
+import bhaskarImage from "../../../attached_assets/generated_images/Bhaskar Dasgupta (2).png"
 import swapnilImage from "../../../attached_assets/generated_images/Swapnil Pawar.jpg"
 import shivImage from "../../../attached_assets/generated_images/Shiv Chichani.jpg"
 
@@ -91,7 +91,7 @@ export default function AboutUs() {
             <Card className="p-8">
               <h2 className="text-2xl font-bold mb-4">The RuDo Philosophy</h2>
               <p className="text-muted-foreground leading-relaxed">
-                We don't sell products—we engineer portfolios. Most fund managers underperform their benchmarks. We focus on what works: multi-asset diversification and factor investing.
+                We don't sell products we engineer portfolios. Most fund managers underperform their benchmarks. We focus on what works: multi-asset diversification and factor investing.
               </p>
             </Card>
           </div>
@@ -102,7 +102,7 @@ export default function AboutUs() {
               Every asset evaluated through six lenses: Liquidity • Cost • Transparency • Risk • Flexibility • Diversification.
             </p>
             <p className="text-muted-foreground leading-relaxed">
-              Wealth isn't built predicting markets—it's built designing systems that work across them.
+              Wealth isn't built predicting markets it's built designing systems that work across them.
             </p>
           </Card>
         </div>

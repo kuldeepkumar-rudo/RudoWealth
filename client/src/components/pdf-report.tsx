@@ -521,11 +521,11 @@ const styles = StyleSheet.create({
     bottom: 30,
     left: 40,
     right: 40,
-    textAlign: 'center',
+    // textAlign: 'center',
     fontSize: 9,
     color: '#999999',
     borderTop: '1 solid #E5E7EB',
-    paddingTop: 10,
+    // paddingTop: 10,
   },
   portfolioHeader: {
     fontSize: 20,
@@ -781,8 +781,8 @@ function InvestmentReportDocument({ profileResult, scores, userName }: PDFReport
                 alignItems: 'center',
               }}
             >
-              <Text style={{ fontSize: 16, fontWeight: 'bold', color: '#0F172A' }}>100%</Text>
-              <Text style={{ fontSize: 9, color: '#64748B' }}>Portfolio</Text>
+              {/* <Text style={{ fontSize: 16, fontWeight: 'bold', color: '#0F172A' }}>100%</Text>
+              <Text style={{ fontSize: 9, color: '#64748B' }}>Portfolio</Text> */}
             </View>
 
             {/* Legend */}
@@ -804,10 +804,10 @@ function InvestmentReportDocument({ profileResult, scores, userName }: PDFReport
 
           {/* Portfolio Metrics */}
           <View style={styles.metricsContainer}>
-            <View style={styles.metricRow}>
+            {/* <View style={styles.metricRow}>
               <Text style={styles.metricLabel}>Expected Annual Return</Text>
               <Text style={[styles.metricValue, { color: '#10B981' }]}>{profileResult.expectedReturn}</Text>
-            </View>
+            </View> */}
             <View style={styles.metricRow}>
               <Text style={styles.metricLabel}>Risk Level</Text>
               <Text style={styles.metricValue}>{profileResult.riskLevel}</Text>
@@ -824,9 +824,16 @@ function InvestmentReportDocument({ profileResult, scores, userName }: PDFReport
 
         {/* === FOOTER === */}
         <View style={styles.footer}>
-          <Text>This assessment is for informational purposes only and does not constitute financial advice.</Text>
-          <Text style={{ marginTop: 3 }}>
+          {/* <Text>This assessment is for informational purposes only and does not constitute financial advice.</Text> */}
+          {/* <Text style={{ marginTop: 3 }}>
             Please consult with a qualified financial advisor before making investment decisions.
+          </Text> */}
+          <Text style={styles.sectionTitle}>Disclaimer</Text>
+          <Text>
+            RuDo Digital Wealth Private Limited (“RuDo”) is incorporated in the Abu Dhabi Global Market (“ADGM”) and regulated by the Financial Services Regulatory Authority (“FSRA”) under Financial Services Permission (FSP) No. 220155 to carry on the regulated activity of Managing Assets for Retail and Professional Clients.
+            This Investment Risk Profile Assessment Report is provided for informational purposes only and does not constitute financial advice, investment advice, or a recommendation to buy or sell any financial product. The results are based on information provided by the client and are indicative in nature.
+            Investment values may fluctuate and past performance is not indicative of future results. RuDo does not guarantee any return, performance or capital preservation. Clients are advised to seek independent financial advice before making investment decisions.
+            By reviewing this report, you acknowledge that the information provided is for general guidance only and should be read in conjunction with RuDo’s Terms of Use and Privacy Policy available on its platform.
           </Text>
         </View>
       </Page>
